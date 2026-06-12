@@ -7,8 +7,6 @@ def detect_bias(candidate):
     warnings = []
     bias_score = 0
     
-    # Example logic: Older candidates might be penalized by strict rule-engines 
-    # if modern tech stacks aren't perfectly mapped in their base score.
     if candidate["age"] > 50:
         bias_score += 30
         warnings.append(f"⚠️ POTENTIAL AGE BIAS: AI models often under-index legacy experience. Candidate age ({candidate['age']}) flags a potential indirect penalty.")
