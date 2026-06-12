@@ -11,8 +11,6 @@ def detect_bias(candidate):
         bias_score += 30
         warnings.append(f"⚠️ POTENTIAL AGE BIAS: AI models often under-index legacy experience. Candidate age ({candidate['age']}) flags a potential indirect penalty.")
         
-    # Example logic: If gender is female and they have very high communication but slightly lower coding score,
-    # the strict AI might reject them, reflecting a systemic bias where soft-skills are undervalued in technical screens.
     if candidate["gender"] == "Female" and candidate["communication"] > 85 and candidate["coding_score"] < 85:
         bias_score += 40
         warnings.append("⚠️ SYSTEMIC BIAS ALERT: System heavily penalizes coding score while undervaluing strong communication skills common in cross-functional female candidates.")
